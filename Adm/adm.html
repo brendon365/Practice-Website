@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admission Form</title>
+<style type="text/css">
+body {
+	background-color: black;
+	color: white;
+	}
+.active{
+	padding: 15px;
+	width: 60px;
+	border:1px solid green;
+	background-color: black;
+}
+.a{
+  color: white;
+  text-decoration: none;
+}
+<style> 
+div { 
+	box-sizing: border-box; 
+	width: 100%; 
+	border: 100px solid black; 
+	float: left; 
+	align-content: center; 
+	align-items: center; 
+} 
+
+form { 
+	margin: 0 auto; 
+	width: 600px; 
+}</style> 
+
+</style>
+</head>
+<body>
+<div class="active">
+<a class="a" href="javascript:javascript:history.go(-1)">HOME</a>
+</div>
+<div>
+<h1 style="text-align: center;">ADMISSION FORM</h1> 
+<form name="AdmForm" action="/submit.php" onsubmit="return stream()" method="post"> 
+	<p>Name: <input type="text" size="40" name="name" required></p> 
+	<br> 
+	<p>Address: <input type="text" size="40" name="address" required></p> 
+	<br> 
+	<p>E-mail Address: <input type="text" size="40" name="email" required></p> 
+	<br>  
+	<p>Mobile Number: <input type="number" size="15" name="mobilenumber" required></p> 
+	<br> 
+
+	<p> 
+	SELECT YOUR COURSE :
+	<select type="text" value="" name="subject"> 
+	<option>BBA</option> 
+	<option>BCA</option> 
+	<option>BCOM</option> 
+	<option>BSC</option> 
+	<option>BA</option>
+	<option>B.MASSCOM</option>
+	</select> 
+	</p> 
+	<br> 
+	<br>
+	<input type="submit" value="send" name="Submit" > 
+	<input type="reset" value="Reset" name="Reset" > 
+	</p> 
+	</form> 
+
+<script> 
+function stream() { 
+	var name = document.forms["AdmForm"]["name"]; 
+	var email = document.forms["AdmForm"]["email"]; 
+	var phone = document.forms["AdmForm"]["mobilenumber"]; 
+	var what = document.forms["AdmForm"]["subject"]; 
+	var address = document.forms["AdmForm"]["address"]; 
+
+	if (name.value == "") { 
+		window.alert("Please enter your name."); 
+		name.focus(); 
+		return false; 
+		} 
+
+	if (address.value == "") { 
+		window.alert("Please enter your address."); 
+		address.focus(); 
+		return false; 
+		} 
+
+	if (email.value == "") { 
+		window.alert( 
+		"Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+		} 
+
+	if (phone.value == "") { 
+		window.alert( 
+		"Please enter your mobile number."); 
+		phone.focus(); 
+		return false; 
+		} 
+
+	if (what.selectedIndex < 1) { 
+		alert("Please enter your course."); 
+		what.focus(); 
+		return false; 
+		} 
+
+		return true; 
+	} 
+</script> 
+</div>
+</body>
+</html>
